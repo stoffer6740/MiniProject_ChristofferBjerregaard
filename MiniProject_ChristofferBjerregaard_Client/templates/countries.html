@@ -1,0 +1,27 @@
+<p>There are <strong>{{ countries.length }}</strong> countries in the database.</p>
+<div class="col-lg-4" ng-repeat="country in countries">
+    <div class="panel panel-default">
+        <div class="panel-heading w_flag">
+            <img class="flag" src="http://www.geonames.org/flags/x/{{country.alpha2}}.gif">
+            <input type="button" value="x" ng-click="deleteCountry(country.id)" class="btn btn-xs btn-danger pull-right deleteCountry">
+        </div>
+        <div class="panel-body">
+            <strong>{{ country.name }} | {{ country.alpha3 }} | {{ country.alpha2 }}</strong>
+        </div>
+        <div class="panel-footer">
+            <input type="button" class="btn btn-primary" value="Edit information">
+            <input type="button" class="btn btn-success" ng-click="getCountry(country.id, country.name)" value="View more information">
+        </div>
+    </div>
+</div>
+
+<!--<div class="col-lg-4 country-panel-wrapper" ng-repeat="country in countries">-->
+    <!--<div class="col-lg-12 flag" style="background: url('http://www.geonames.org/flags/x/{{country.alpha2}}.gif'); background-size: cover"></div>-->
+    <!--<div class="col-lg-12 country-panel">-->
+        <!--<div class="country-panel-bg"></div>-->
+        <!--{{country.name}}-->
+        <!--<hr>-->
+        <!--<input type="button" class="btn btn-primary" value="Edit information">-->
+        <!--<input type="button" class="btn btn-success" ng-click="getCountry(country.id, country.name)" value="View more information">-->
+    <!--</div>-->
+<!--</div>-->

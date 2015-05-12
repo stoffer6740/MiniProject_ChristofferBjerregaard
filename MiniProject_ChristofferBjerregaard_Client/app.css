@@ -1,0 +1,65 @@
+body {
+    background-color: #dedede !important;
+}
+.content {
+    background-color: white;
+    padding-top: 70px;
+    padding-bottom: 15px;
+}
+.footer {
+    padding: 25px;
+    background-color: #444;
+    color:white;
+}
+.wiki-text {
+    padding:15px;
+    background-color: #fbfbfb;
+    border-radius: 5px;
+    border:1px solid #ebebeb;
+    margin-bottom: 15px;
+}
+long {
+    font-size: 10px;
+    color: #9c9c9c;
+}
+.flag {
+    height: 42px;
+    border-radius: 4px 0 0 0;
+    opacity: 0.2;
+    width: 100%;
+}
+.w_flag {
+    padding:0 !important;
+}
+.deleteCountry {
+    margin: 10px 10px;
+    position: relative;
+    top: -53px;
+    right: -10px;
+}
+.custom-nav {
+    padding: 10px;
+    background-color: #444;
+    color:white;
+    border:none;
+    -webkit-box-shadow: 0 0 5px 5px rgba(1,1,1,0.2);
+    box-shadow: 0 0 5px 5px rgba(1,1,1,0.2);
+}
+.custom-nav a {
+    color:white;
+    padding: 5px;
+}
+.custom-nav .btn:hover {
+    color:white;
+    background-color: #585858;
+}
+.country-panel-wrapper {
+    margin-bottom: 15px;
+}
+.country-panel {
+    background-color: #444;
+    padding: 15px;
+}
+.country-panel-bg {
+
+}
