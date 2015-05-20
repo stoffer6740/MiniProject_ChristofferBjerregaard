@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_miniproject_christofferbjerregaard" default="compile.module.miniproject_christofferbjerregaard">
+  <dirname property="module.miniproject_christofferbjerregaard.basedir" file="${ant.file.module_miniproject_christofferbjerregaard}"/>
+  
+  <property name="module.jdk.home.miniproject_christofferbjerregaard" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.miniproject_christofferbjerregaard" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.miniproject_christofferbjerregaard" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.miniproject_christofferbjerregaard" value="-encoding UTF-8 -source 8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="miniproject_christofferbjerregaard.output.dir" value="${module.miniproject_christofferbjerregaard.basedir}/target/classes"/>
+  <property name="miniproject_christofferbjerregaard.testoutput.dir" value="${module.miniproject_christofferbjerregaard.basedir}/target/test-classes"/>
+  
+  <path id="miniproject_christofferbjerregaard.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="miniproject_christofferbjerregaard.module.production.classpath">
+    <path refid="${module.jdk.classpath.miniproject_christofferbjerregaard}"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-web:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:log4j-over-slf4j:1.7.11.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-classic:1.1.3.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-core:1.1.3.classpath"/>
+    <path refid="library.maven:_org.yaml:snakeyaml:1.14.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-tomcat:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-core:8.0.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-el:8.0.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-websocket:8.0.20.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.5.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.5.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.5.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-validator:5.1.3.final.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.0.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.1.6.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.xerial:sqlite-jdbc:3.8.9.1.classpath"/>
+  </path>
+  
+  <path id="miniproject_christofferbjerregaard.runtime.production.module.classpath">
+    <pathelement location="${miniproject_christofferbjerregaard.output.dir}"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-web:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:log4j-over-slf4j:1.7.11.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-classic:1.1.3.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-core:1.1.3.classpath"/>
+    <path refid="library.maven:_org.yaml:snakeyaml:1.14.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-tomcat:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-core:8.0.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-el:8.0.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-websocket:8.0.20.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.5.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.5.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.5.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-validator:5.1.3.final.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.0.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.1.6.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.xerial:sqlite-jdbc:3.8.9.1.classpath"/>
+  </path>
+  
+  <path id="miniproject_christofferbjerregaard.module.classpath">
+    <path refid="${module.jdk.classpath.miniproject_christofferbjerregaard}"/>
+    <pathelement location="${miniproject_christofferbjerregaard.output.dir}"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-web:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:log4j-over-slf4j:1.7.11.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-classic:1.1.3.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-core:1.1.3.classpath"/>
+    <path refid="library.maven:_org.yaml:snakeyaml:1.14.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-tomcat:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-core:8.0.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-el:8.0.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-websocket:8.0.20.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.5.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.5.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.5.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-validator:5.1.3.final.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.0.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.1.6.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.xerial:sqlite-jdbc:3.8.9.1.classpath"/>
+  </path>
+  
+  <path id="miniproject_christofferbjerregaard.runtime.module.classpath">
+    <pathelement location="${miniproject_christofferbjerregaard.testoutput.dir}"/>
+    <pathelement location="${miniproject_christofferbjerregaard.output.dir}"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-web:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:log4j-over-slf4j:1.7.11.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-classic:1.1.3.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-core:1.1.3.classpath"/>
+    <path refid="library.maven:_org.yaml:snakeyaml:1.14.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-tomcat:1.2.3.release.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-core:8.0.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-el:8.0.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-logging-juli:8.0.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat.embed:tomcat-embed-websocket:8.0.20.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.5.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.5.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.5.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-validator:5.1.3.final.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.0.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.1.6.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.1.6.release.classpath"/>
+    <path refid="library.maven:_org.xerial:sqlite-jdbc:3.8.9.1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.miniproject_christofferbjerregaard">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.miniproject_christofferbjerregaard">
+    <patternset refid="excluded.from.module.miniproject_christofferbjerregaard"/>
+  </patternset>
+  
+  <path id="miniproject_christofferbjerregaard.module.sourcepath">
+    <dirset dir="${module.miniproject_christofferbjerregaard.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.miniproject_christofferbjerregaard" depends="compile.module.miniproject_christofferbjerregaard.production,compile.module.miniproject_christofferbjerregaard.tests" description="Compile module MiniProject_ChristofferBjerregaard"/>
+  
+  <target name="compile.module.miniproject_christofferbjerregaard.production" depends="register.custom.compilers" description="Compile module MiniProject_ChristofferBjerregaard; production classes">
+    <mkdir dir="${miniproject_christofferbjerregaard.output.dir}"/>
+    <javac2 destdir="${miniproject_christofferbjerregaard.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.miniproject_christofferbjerregaard}/javac">
+      <compilerarg line="${compiler.args.miniproject_christofferbjerregaard}"/>
+      <bootclasspath refid="miniproject_christofferbjerregaard.module.bootclasspath"/>
+      <classpath refid="miniproject_christofferbjerregaard.module.production.classpath"/>
+      <src refid="miniproject_christofferbjerregaard.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.miniproject_christofferbjerregaard"/>
+    </javac2>
+    
+    <copy todir="${miniproject_christofferbjerregaard.output.dir}">
+      <fileset dir="${module.miniproject_christofferbjerregaard.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.miniproject_christofferbjerregaard.tests" depends="register.custom.compilers,compile.module.miniproject_christofferbjerregaard.production" description="compile module MiniProject_ChristofferBjerregaard; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.miniproject_christofferbjerregaard" description="cleanup module">
+    <delete dir="${miniproject_christofferbjerregaard.output.dir}"/>
+    <delete dir="${miniproject_christofferbjerregaard.testoutput.dir}"/>
+  </target>
+</project>

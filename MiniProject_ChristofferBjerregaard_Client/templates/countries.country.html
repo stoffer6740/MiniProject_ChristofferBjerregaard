@@ -4,17 +4,13 @@
             <div class="panel-heading">
                 Info
             </div>
-                <ul class="list-group">
-                    <li class="list-group-item">{{ country.name }}</li>
-                    <li class="list-group-item">{{ country.alpha2 }} <long>ISO 3166-1 alpha-3</long></li>
-                    <li class="list-group-item">{{ country.alpha3 }} <long>ISO 3166-1 alpha-2</long></li>
-                </ul>
-        </div>
-        <div class="flag">
-            test
+            <ul class="list-group">
+                <li class="list-group-item">{{ country.name }}</li>
+                <li class="list-group-item">{{ country.alpha2 }} <long>ISO 3166-1 alpha-3</long></li>
+                <li class="list-group-item">{{ country.alpha3 }} <long>ISO 3166-1 alpha-2</long></li>
+            </ul>
         </div>
     </div>
-
 
     <div class="col-lg-6" ng-repeat="wiki in wikiData.query.pages | filter:$first">
         <div class="wiki-text">
@@ -45,5 +41,5 @@
             </div>
         </div>
     </div>
-    <input type="button" class="btn btn-primary" value="Edit {{ country.name }}">
+    <input type="button" class="btn btn-primary" ui-sref="edit({country: country.name, id: country.id})" value="Edit {{ country.name }}">
 </div>

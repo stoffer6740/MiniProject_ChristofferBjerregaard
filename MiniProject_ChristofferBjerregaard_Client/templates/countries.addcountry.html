@@ -1,11 +1,23 @@
 <p>Add new country</p>
 <div class="">
     <div class="col-lg-4">
+        <form>
         <div class="form-group">
-            <input class="form-control" placeholder="Name (ex. Denmark)">
-            <input class="form-control" placeholder="Alpha 2 (ex. dk)">
-            <input class="form-control" placeholder="Alpha 3 (ex. DNK)">
+            <input class="form-control" placeholder="Name (ex. Denmark)" ng-model="country.name">
+            <input class="form-control" placeholder="Alpha 2 (ex. dk)" ng-model="country.alpha2">
+            <input class="form-control" placeholder="Alpha 3 (ex. DNK)" ng-model="country.alpha3">
         </div>
-        <input class="btn btn-primary pull-right" type="button" value="Submit country">
+        <input class="btn btn-primary pull-right" type="button" value="Submit country" ng-click="addCountry(country)">
+        </form>
+        {{ message }}
+    </div>
+
+    <div class="col-lg-4">
+        <div class="list-group">
+            <div class="list-group-item" ng-repeat="c in restCountries">
+                {{ c.name }} | {{ c.alpha2Code }} | {{ c.alpha3Code }}
+            </div>
+        </div>
+        <input type="button" class="btn btn-primary pull-right" value="Get list of Sample countries" ng-click="getRestCountries()">
     </div>
 </div>

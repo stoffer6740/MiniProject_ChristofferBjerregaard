@@ -1,4 +1,5 @@
-<p>There are <strong>{{ countries.length }}</strong> countries in the database.</p>
+<p ng-show="countries">There are <strong>{{ countries.length }}</strong> countries in the database.</p>
+<p ng-show="!countries">There are <strong>NO</strong> countries in the database. <a ui-sref="countries/addcountry">Add some?</a></p>
 <div class="col-lg-4" ng-repeat="country in countries">
     <div class="panel panel-default">
         <div class="panel-heading w_flag">
@@ -9,8 +10,8 @@
             <strong>{{ country.name }} | {{ country.alpha3 }} | {{ country.alpha2 }}</strong>
         </div>
         <div class="panel-footer">
-            <input type="button" class="btn btn-primary" value="Edit information">
-            <input type="button" class="btn btn-success" ng-click="getCountry(country.id, country.name)" value="View more information">
+            <input type="button" class="btn btn-primary" ui-sref="edit({country: country.name, id: country.id})" value="Edit information">
+            <input type="button" class="btn btn-success" ui-sref="countries/country({country: country.name, id: country.id})"  value="View more information">
         </div>
     </div>
 </div>

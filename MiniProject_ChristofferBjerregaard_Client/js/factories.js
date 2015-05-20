@@ -3,10 +3,12 @@
  */
 mini_project.factory('CountriesFactory', function ($http) {
     return {
-        addCountry: function () {
+        addCountry: function (name, alpha2, alpha3) {
             return $http({
-                    url: BASE_URL + '/countries',
-                    method: 'POST'
+                    url: BASE_URL + '/add/country',
+                    method: 'POST',
+                    headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    params: {name:name, alpha2:angular.lowercase(alpha2), alpha3:alpha3}
                 })
                 .success(function () {
                     console.log('addCountry success.');
@@ -19,6 +21,7 @@ mini_project.factory('CountriesFactory', function ($http) {
             return $http({
                     url: BASE_URL + '/countries',
                     method: 'GET'
+                    //headers:  {'Content-Type' : 'application/json;charset=UTF-8'}
                 })
                 .success(function () {
                     console.log('getCountries success.');
@@ -53,10 +56,11 @@ mini_project.factory('CountriesFactory', function ($http) {
                     console.log('deleteCountry error.')
                 })
         },
-        editCountry: function (id) {
+        editCountry: function (id, country) {
             return $http({
                     url: BASE_URL + '/countries',
-                    method: 'PUT'
+                    method: 'PUT',
+                    params: {id:id, name:country.name, alpha2:country.alpha2, alpha3:country.alpha3}
                 })
                 .success(function () {
                     console.log('editCountry success.');
@@ -79,10 +83,24 @@ mini_project.factory('CountriesFactory', function ($http) {
         },
         getFromWiki: function (name) {
             return $http({
-                url: WIKI_URL + "/w/api.php",
-                method: 'GET',                                                                       // Limit to 5 sentences, and only 1 extract
-                params: {format:'json', action:'query', prop:'extracts', exintro:'', explaintext:'', exsentences:'5', exlimit:'1', titles:name}
-            })
+                    url: WIKI_URL + "/w/api.php",
+                    method: 'GET',                                                                       // Limit to 5 sentences, and only 1 extract
+                    params: {format:'json', action:'query', prop:'extracts', exintro:'', explaintext:'', exsentences:'5', exlimit:'1', titles:name}
+                })
+                .success(function () {
+                    console.log('editCountry success.');
+                })
+                .error(function () {
+                    console.log('editCountry error.')
+                })
+        },
+        getFromRestCountries: function() {
+                return $http({
+                    url: "https://restcountries.eu/rest/v1/all",
+                    method: 'GET'
+                    //header: {"X-Mashape-Key":"DVMxyYsUXGmshYwFyBe8vLzx5Bpbp1dZ2e7jsnMtbngHizgTzD"},
+                    //params: {}
+                })
                 .success(function () {
                     console.log('editCountry success.');
                 })
