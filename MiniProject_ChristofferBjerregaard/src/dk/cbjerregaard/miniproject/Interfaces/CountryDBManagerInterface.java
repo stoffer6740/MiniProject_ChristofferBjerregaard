@@ -12,7 +12,7 @@ import java.util.List;
  * Created by Christoffer on 12-05-2015.
  */
 public interface CountryDBManagerInterface {
-    List<Country> getCountries() throws SQLException;
+    List<Country> getCountries();
     Country getCountry(int id);
     void deleteCountry(int id);
     void addCountry(String name, String alpha2, String alpha3);

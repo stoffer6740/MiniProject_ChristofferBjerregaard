@@ -13,12 +13,12 @@ import java.util.List;
 public class CountryDBManager implements CountryDBManagerInterface {
     private static DatabaseConnection databaseConnection;
 
-    public CountryDBManager() throws SQLException {
+    public CountryDBManager() {
         databaseConnection = DatabaseConnection.getInstance();
     }
 
 
-    public List<Country> getCountries() throws SQLException {
+    public List<Country> getCountries() {
         List<Country> countries = new ArrayList<>();
         Statement stmt = null;
         try (Connection con = databaseConnection.getConnection()) {

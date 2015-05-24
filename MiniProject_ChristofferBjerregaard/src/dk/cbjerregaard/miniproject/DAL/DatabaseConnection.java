@@ -13,7 +13,7 @@ public class DatabaseConnection {
         return DriverManager.getConnection(DATABASE_FILE);
     }
 
-    public static DatabaseConnection getInstance() throws  SQLException {
+    public static DatabaseConnection getInstance() {
         if(instance == null){
             instance = new DatabaseConnection();
         }
