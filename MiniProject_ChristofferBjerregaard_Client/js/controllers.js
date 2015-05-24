@@ -2,7 +2,7 @@
  * Created by Christoffer on 11-05-2015.
  */
 mini_project.controller('AppCtrl', ['CountriesFactory', '$scope', function(CountriesFactory, $scope) {
-    CountriesFactory.quickAdd();
+    //CountriesFactory.quickAdd();
 }]);
 
 mini_project.controller('CountriesCtrl', ['CountriesFactory', 'CountryService', '$scope', '$state', function (CountriesFactory, CountryService, $scope, $state) {
@@ -44,7 +44,7 @@ mini_project.controller('AddCountryCtrl', ['CountriesFactory', 'CountryService',
     $scope.addCountry = function (country) {
         CountriesFactory.addCountry(country.name, country.alpha2, country.alpha3).then(function (response) {
             if(response.status == 200) {
-                $scope.message = "Successfully added country"
+                $scope.message = "Successfully added country";
                 $state.go('countries');
             }
             else {
