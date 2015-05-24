@@ -8,8 +8,9 @@ var WIKI_URL = "https://en.wikipedia.org";
 var RESTCOUNTRIES_URL = "https://restcountries-v1.p.mashape.com/all";
 
 
-mini_project.config(function ($stateProvider, $urlRouterProvider) {
+mini_project.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('countries');
+
 
     $stateProvider
         .state('countries', {

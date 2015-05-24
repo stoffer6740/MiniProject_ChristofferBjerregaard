@@ -2,7 +2,7 @@
 <div class="">
     <div class="col-lg-4">
         <form>
-        <div class="form-group">
+        <div class="form-group addcountry">
             <input class="form-control" placeholder="Name (ex. Denmark)" ng-model="country.name">
             <input class="form-control" placeholder="Alpha 2 (ex. dk)" ng-model="country.alpha2">
             <input class="form-control" placeholder="Alpha 3 (ex. DNK)" ng-model="country.alpha3">
@@ -12,12 +12,12 @@
         {{ message }}
     </div>
 
-    <div class="col-lg-4">
+    <div class="col-lg-8">
         <div class="list-group">
-            <div class="list-group-item" ng-repeat="c in restCountries">
+            <div class="list-group-item col-lg-6" ng-repeat="c in restCountries | filter:country.name">
                 {{ c.name }} | {{ c.alpha2Code }} | {{ c.alpha3Code }}
             </div>
         </div>
-        <input type="button" class="btn btn-primary pull-right" value="Get list of Sample countries" ng-click="getRestCountries()">
+        <input ng-hide="restCountries" type="button" class="btn btn-primary pull-right" value="Get list of Sample countries" ng-click="getRestCountries()">
     </div>
 </div>

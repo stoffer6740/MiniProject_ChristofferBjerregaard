@@ -8,26 +8,26 @@ mini_project.factory('CountriesFactory', function ($http) {
                     url: BASE_URL + '/add/country',
                     method: 'POST',
                     headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    params: {name:name, alpha2:angular.lowercase(alpha2), alpha3:alpha3}
+                    params: { name:name, alpha2:angular.lowercase(alpha2), alpha3:alpha3 }
                 })
                 .success(function () {
                     console.log('addCountry success.');
                 })
                 .error(function () {
-                    console.log('addCountry error.')
+                    console.log('addCountry error.');
                 })
         },
         getCountries: function () {
             return $http({
                     url: BASE_URL + '/countries',
-                    method: 'GET'
-                    //headers:  {'Content-Type' : 'application/json;charset=UTF-8'}
+                    method: 'GET',
+                    headers:  {'Content-Type' : 'application/json;charset=UTF-8'}
                 })
                 .success(function () {
                     console.log('getCountries success.');
                 })
                 .error(function () {
-                    console.log('getCountries error.')
+                    console.log('getCountries error.');
                 })
         },
         getCountry: function(id) {
@@ -40,7 +40,7 @@ mini_project.factory('CountriesFactory', function ($http) {
                     console.log('getCountry success.');
                 })
                 .error(function () {
-                    console.log('getCountry error.')
+                    console.log('getCountry error.');
                 })
         },
         deleteCountry: function (id) {
@@ -53,20 +53,20 @@ mini_project.factory('CountriesFactory', function ($http) {
                     console.log('deleteCountry success.');
                 })
                 .error(function () {
-                    console.log('deleteCountry error.')
+                    console.log('deleteCountry error.');
                 })
         },
         editCountry: function (id, country) {
             return $http({
                     url: BASE_URL + '/countries',
                     method: 'PUT',
-                    params: {id:id, name:country.name, alpha2:country.alpha2, alpha3:country.alpha3}
+                    params: { id:id, name:country.name, alpha2:country.alpha2, alpha3:country.alpha3 }
                 })
                 .success(function () {
                     console.log('editCountry success.');
                 })
                 .error(function () {
-                    console.log('editCountry error.')
+                    console.log('editCountry error.');
                 })
         },
         quickAdd: function () {
@@ -78,20 +78,23 @@ mini_project.factory('CountriesFactory', function ($http) {
                     console.log('editCountry success.');
                 })
                 .error(function () {
-                    console.log('editCountry error.')
+                    console.log('editCountry error.');
                 })
         },
         getFromWiki: function (name) {
             return $http({
                     url: WIKI_URL + "/w/api.php",
                     method: 'GET',                                                                       // Limit to 5 sentences, and only 1 extract
-                    params: {format:'json', action:'query', prop:'extracts', exintro:'', explaintext:'', exsentences:'5', exlimit:'1', titles:name}
+                    //headers:  {'Api-User-Agent': 'CountryDataApp/1.0 (http://c-bjerregaard.dk', 'origin':'http://c-bjerregaard.dk', 'Content-Type' : 'application/json;charset=UTF-8' },
+                    //headers: {"Access-Control-Request-Headers": "accept, origin, authorization"},
+                    headers: { 'Api-User-Agent': 'Example/1.0' },
+                    params: { format:'jsonp', action:'query', prop:'extracts', exintro:'', explaintext:'', exsentences:'5', exlimit:'1', titles:name, origin:'advisory.wikimedia.org' }
                 })
                 .success(function () {
                     console.log('editCountry success.');
                 })
                 .error(function () {
-                    console.log('editCountry error.')
+                    console.log('editCountry error.');
                 })
         },
         getFromRestCountries: function() {
@@ -105,7 +108,7 @@ mini_project.factory('CountriesFactory', function ($http) {
                     console.log('editCountry success.');
                 })
                 .error(function () {
-                    console.log('editCountry error.')
+                    console.log('editCountry error.');
                 })
         }
     }

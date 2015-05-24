@@ -7,14 +7,14 @@
           <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/WEB-INF/web.xml" />
         </descriptors>
         <webroots>
-          <root url="file://$MODULE_DIR$" relative="/" />
+          <root url="file://$MODULE_DIR$/WEB-INF" relative="/" />
         </webroots>
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/Application/Server.java</file>
+          <file>file://$MODULE_DIR$/src/dk/cbjerregaard/miniproject/Application/Server.java</file>
         </fileset>
       </configuration>
     </facet>
