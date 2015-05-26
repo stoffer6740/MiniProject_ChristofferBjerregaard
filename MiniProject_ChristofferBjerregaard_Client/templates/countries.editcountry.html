@@ -1,9 +1,12 @@
 <p>Edit country</p>
-
     <div class="col-lg-4">
-        {{ params }}
-    </div>
-
-    <div class="col-lg-4">
-
+        <p>Editing <strong>{{params.country}}</strong></p>
+        <form>
+            <div class="form-group addcountry">
+                <input class="form-control" placeholder="Name (ex. Denmark)" ng-model="country.name">
+                <input class="form-control" placeholder="Alpha 2 (ex. dk)" ng-model="country.alpha2">
+                <input class="form-control" placeholder="Alpha 3 (ex. DNK)" ng-model="country.alpha3">
+            </div>
+            <input class="btn btn-primary pull-right" type="button" value="Edit country" ng-click="editCountry(params.id, country)">
+        </form>
     </div>

@@ -1,10 +1,11 @@
 body {
-    background-color: #dedede !important;
+    background-color: #F7F7F7 !important;
 }
 .content {
     background-color: white;
     padding-top: 70px;
     padding-bottom: 15px;
+    margin-bottom: 90px;
 }
 .footer {
     padding: 25px;
@@ -22,20 +23,35 @@ long {
     font-size: 10px;
     color: #9c9c9c;
 }
+.d_flag{
+    height:18px;
+    float:right;
+}
 .flag {
-    height: 42px;
+    -webkit-transition: all 500ms;
+    -moz-transition: all 500ms;
+    -ms-transition: all 500ms;
+    -o-transition: all 500ms;
+    transition: all 500ms;
+    height: 140px;
     border-radius: 4px 0 0 0;
     opacity: 0.2;
-    width: 100%;
+    width: 105%;
+}
+.flag:hover {
+    opacity:0.4;
 }
 .w_flag {
     padding:0 !important;
+    overflow: hidden;
+    max-height: 140px;
 }
 .deleteCountry {
-    margin: 10px 10px;
+    margin: -88px 10px;
     position: relative;
     top: -53px;
     right: -10px;
+    padding: 5px 25px;
 }
 .custom-nav {
     padding: 10px;
@@ -65,4 +81,80 @@ long {
 }
 .addcountry input{
     margin:5px 0 5px 0;
+}
+.gmaps {
+    background-color: #F7F7F7;
+    margin-bottom: 15px;
+    padding:0 !important;
+}
+.currencyConverter {
+    padding:5px;
+    background-color: #F7F7F7;
+    text-align: center;
+}
+.currencyConverter input {
+    width:155px;
+}
+.currencyConverter input:first-child {
+    float: left;
+}
+.currencyConverter input:nth-child(2) {
+    float: right;
+}
+.currencyConverter hr {
+    margin:5px;
+}
+.currencyResult {
+    text-align: left;
+    margin-top: 5px;
+    width: 100%;
+    height:100px;
+    background-color: #F7F7F7;
+    padding:5px;
+    border: 1px solid #dedede;
+}
+.rmi-up {
+    color: #5CB85C;
+}
+.rmi-down {
+    color: #D9534F;
+}
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes spinner {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.spinner {
+    -webkit-animation: spinner 2s linear infinite;
+    -moz-animation: spinner 2s linear infinite;
+    -ms-animation: spinner 2s linear infinite;
+    -o-animation: spinner 2s linear infinite;
+    animation: spinner 2s linear infinite;
 }

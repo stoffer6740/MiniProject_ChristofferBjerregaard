@@ -1,18 +1,20 @@
 package dk.cbjerregaard.miniproject.ConsoleApplication;
 
 import dk.cbjerregaard.miniproject.DAL.CountryDBManager;
-import dk.cbjerregaard.miniproject.Interfaces.CountryDBManagerInterface;
+import dk.cbjerregaard.miniproject.Service.RmiConnector;
 
+import java.rmi.RemoteException;
+import java.rmi.server.ServerNotActiveException;
 import java.sql.SQLException;
 import java.util.Scanner;
 
 /**
  * Created by Christoffer on 12-05-2015.
  */
-public abstract class Console implements CountryDBManagerInterface {
-    public static void main (String args[]) throws SQLException{
+public abstract class Console {
+    public static void main (String args[]) throws SQLException, ServerNotActiveException, RemoteException {
         int swValue;
-        CountryDBManager cdbm = new CountryDBManager();
+        CountryDBManager cdbm = CountryDBManager.INSTANCE;
         Scanner input = new Scanner(System.in);
         System.out.println("============================");
         System.out.println("|   MINIPROJECT CONSOLE    |");
@@ -49,6 +51,10 @@ public abstract class Console implements CountryDBManagerInterface {
                 System.out.println("Press enter to add country: " + name + ", " + alpha2 + ", " + alpha3);
                 add.nextLine();
                 cdbm.addCountry(name, alpha2, alpha3);
+                break;
+            case 4:
+                System.out.println("Checking RMI");
+                RmiConnector.INSTANCE.getRmiServer().getClientInfo();
                 break;
             default:
                 System.out.println("Invalid selection");

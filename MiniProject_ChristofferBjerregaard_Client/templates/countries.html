@@ -1,16 +1,12 @@
-<p ng-show="countries">There are <strong>{{ countries.length }}</strong> countries in the database.</p>
-<p ng-show="!countries">There are <strong>NO</strong> countries in the database. <a ui-sref="countries/addcountry">Add some?</a></p>
+<p ng-show="!countries.length == 0">There are <strong>{{ countries.length }}</strong> countries in the database.</p>
+<p ng-show="countries.length == 0">There are <strong>NO</strong> countries in the database. <a ui-sref="countries/addcountry">Add some?</a></p>
 <div class="col-lg-4" ng-repeat="country in countries">
     <div class="panel panel-default">
         <div class="panel-heading w_flag">
-            <img class="flag" src="http://www.geonames.org/flags/x/{{country.alpha2}}.gif">
+            <img class="flag" ng-src="http://www.geonames.org/flags/x/{{country.alpha2}}.gif">
             <input type="button" value="x" ng-click="deleteCountry(country.id)" class="btn btn-xs btn-danger pull-right deleteCountry">
         </div>
-        <div class="panel-body">
-            <strong>{{ country.name }} | {{ country.alpha3 }} | {{ country.alpha2 }}</strong>
-        </div>
         <div class="panel-footer">
-            <input type="button" class="btn btn-primary" ui-sref="edit({country: country.name, id: country.id})" value="Edit information">
             <input type="button" class="btn btn-success" ui-sref="countries/country({country: country.name, id: country.id})"  value="View more information">
         </div>
     </div>

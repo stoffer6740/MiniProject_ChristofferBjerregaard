@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <h3 class="modal-title">Edit {{ params.country }}</h3>
+</div>
+<div class="modal-body">
+    <div >
+        <form>
+            <div class="form-group addcountry">
+                <input class="form-control" placeholder="Name (ex. Denmark)" ng-model="country.name">
+                <input class="form-control" placeholder="Alpha 2 (ex. dk)" ng-model="country.alpha2">
+                <input class="form-control" placeholder="Alpha 3 (ex. DNK)" ng-model="country.alpha3">
+            </div>
+
+        </form>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <input class="btn btn-success" type="button" value="Confirm" ng-click="editCountry(params.id, country)">
+    <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
+</div>

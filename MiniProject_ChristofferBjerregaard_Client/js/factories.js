@@ -5,7 +5,7 @@ mini_project.factory('CountriesFactory', function ($http) {
     return {
         addCountry: function (name, alpha2, alpha3) {
             return $http({
-                    url: BASE_URL + '/add/country',
+                    url: BASE_URL + '/post/country',
                     method: 'POST',
                     headers : { 'Content-Type': 'application/x-www-form-urlencoded' },
                     params: { name:name, alpha2:angular.lowercase(alpha2), alpha3:alpha3 }
@@ -19,7 +19,7 @@ mini_project.factory('CountriesFactory', function ($http) {
         },
         getCountries: function () {
             return $http({
-                    url: BASE_URL + '/countries',
+                    url: BASE_URL + '/get/countries',
                     method: 'GET',
                     headers:  {'Content-Type' : 'application/json;charset=UTF-8'}
                 })
@@ -32,8 +32,9 @@ mini_project.factory('CountriesFactory', function ($http) {
         },
         getCountry: function(id) {
             return $http({
-                    url: BASE_URL + '/country',
+                    url: BASE_URL + '/get/country',
                     method: 'GET',
+                    cache: true,
                     params: {id: id}
                 })
                 .success(function () {
@@ -58,7 +59,7 @@ mini_project.factory('CountriesFactory', function ($http) {
         },
         editCountry: function (id, country) {
             return $http({
-                    url: BASE_URL + '/countries',
+                    url: BASE_URL + '/put/country',
                     method: 'PUT',
                     params: { id:id, name:country.name, alpha2:country.alpha2, alpha3:country.alpha3 }
                 })
@@ -75,41 +76,110 @@ mini_project.factory('CountriesFactory', function ($http) {
                     method: 'POST'
                 })
                 .success(function () {
-                    console.log('editCountry success.');
+                    console.log('quickAdd success.');
                 })
                 .error(function () {
-                    console.log('editCountry error.');
+                    console.log('quickAdd error.');
                 })
         },
         getFromWiki: function (name) {
             return $http({
-                    url: WIKI_URL + "/w/api.php",
-                    method: 'GET',                                                                       // Limit to 5 sentences, and only 1 extract
-                    //headers:  {'Api-User-Agent': 'CountryDataApp/1.0 (http://c-bjerregaard.dk', 'origin':'http://c-bjerregaard.dk', 'Content-Type' : 'application/json;charset=UTF-8' },
-                    //headers: {"Access-Control-Request-Headers": "accept, origin, authorization"},
-                    headers: { 'Api-User-Agent': 'Example/1.0' },
-                    params: { format:'jsonp', action:'query', prop:'extracts', exintro:'', explaintext:'', exsentences:'5', exlimit:'1', titles:name, origin:'advisory.wikimedia.org' }
+                    url: WIKI_URL + angular.lowercase(name),
+                    method: 'GET',
+                    cache:true
                 })
                 .success(function () {
-                    console.log('editCountry success.');
+                    console.log('getFromWiki success.');
                 })
                 .error(function () {
-                    console.log('editCountry error.');
+                    console.log('getFromWiki error.');
                 })
         },
         getFromRestCountries: function() {
                 return $http({
                     url: "https://restcountries.eu/rest/v1/all",
-                    method: 'GET'
-                    //header: {"X-Mashape-Key":"DVMxyYsUXGmshYwFyBe8vLzx5Bpbp1dZ2e7jsnMtbngHizgTzD"},
-                    //params: {}
+                    method: 'GET',
+                    cache: true
                 })
                 .success(function () {
-                    console.log('editCountry success.');
+                    console.log('getFromRestCountries success.');
                 })
                 .error(function () {
-                    console.log('editCountry error.');
+                    console.log('getFromRestCountries error.');
+                })
+        },
+        getCurrencies: function(fromCountry, toCountry) {
+            return $http({
+                    url: CURRENCY_API_URL,
+                    method: 'JSONP',
+                    cache:true,
+                    params: {from:fromCountry, to:toCountry, apiKey:CURRENCY_API_KEY, callback:'JSON_CALLBACK'}
+                })
+                .success(function (data) {
+                    console.log(data);
+                    console.log('getFromRestCountries success.');
+                })
+                .error(function (data) {
+                    console.log(data);
+                    console.log('getFromRestCountries error.');
+                })
+        },
+        convertFromRmi: function(sourceCurrency, targetCurrency) {
+                return $http({
+                    url: BASE_URL + '/get/JSONCountryCurrencies',
+                    method: 'GET',
+                    params: { sourceCurrency:sourceCurrency, targetCurrency:targetCurrency }
+                })
+                .success(function (data) {
+                    console.log('getFromRestCountries success.');
+                })
+                .error(function (data) {
+                    console.log('getFromRestCountries error.');
+                })
+        },
+        convertFromRmiAmount: function(sourceCurrency, targetCurrency, amount) {
+            return $http({
+                url: BASE_URL + '/get/JSONCountryCurrencies',
+                method: 'GET',
+                params: { sourceCurrency:sourceCurrency, targetCurrency:targetCurrency, amount:amount }
+            })
+                .success(function (data) {
+                    console.log('getFromRestCountries success.');
+                })
+                .error(function (data) {
+                    console.log('getFromRestCountries error.');
+                })
+        },
+        getDataFromRestCountries: function(alpha2) {
+            return $http({
+                    url: "https://restcountries.eu/rest/v1/alpha/" + alpha2,
+                    method: 'GET',
+                    cache: true
+                })
+                .success(function () {
+                    console.log('getFromRestCountries success.');
+                })
+                .error(function () {
+                    console.log('getFromRestCountries error.');
                 })
         }
     }
+});
+
+mini_project.factory('RMIFactory', function ($http) {
+   return {
+       getRmiStatus: function () {
+           return $http({
+                   url: BASE_URL + '/get/RmiServer',
+                   method: 'GET',
+               params: {status:"yes", currStatus:"yes"}
+               })
+               .success(function () {
+                   console.log('getRmiStatus success.');
+               })
+               .error(function () {
+                   console.log('getRmiStatus error.');
+               })
+       }
+   }
 });

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Andresen_Bjerregaard-ProgAssg2:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Andresen_Bjerregaard_ProgAssg2_jar</output-path>
+    <root id="archive" name="Andresen_Bjerregaard-ProgAssg2.jar">
+      <element id="module-output" name="Andresen_Bjerregaard-ProgAssg2" />
+    </root>
+  </artifact>
+</component>

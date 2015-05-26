@@ -14,6 +14,7 @@ import java.util.List;
 public interface CountryDBManagerInterface {
     List<Country> getCountries();
     Country getCountry(int id);
+    void editCountry(int id, String name, String alpha2, String alpha3);
     void deleteCountry(int id);
     void addCountry(String name, String alpha2, String alpha3);
     void createDatabase() throws SQLException;

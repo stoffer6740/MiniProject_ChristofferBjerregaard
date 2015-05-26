@@ -1,0 +1,7 @@
+{
+  "BASE_URL":           "http://api.c-bjerregaard.dk:47852",
+  "WIKI_URL":           "https://en.wikipedia.org",
+  "RESTCOUNTRIES_URL":  "https://restcountries-v1.p.mashape.com/all",
+  "CURRENCY_API_KEY" :  "jr-bc776d027bb8b0781b9d4d3d8cd138c6",
+  "CURRENCY_API_URL":   "http://jsonrates.com/get/"
+}

@@ -4,5 +4,5 @@ Built-By: Christoffer
 Implementation-Vendor-Id: dk.cbjerregaard.miniproject
 Created-By: IntelliJ IDEA
 Build-Jdk: 1.8.0_20
-Main-Class: ${start-class}
+Main-Class: dk.cbjerregaard.miniproject.Application.Server
 

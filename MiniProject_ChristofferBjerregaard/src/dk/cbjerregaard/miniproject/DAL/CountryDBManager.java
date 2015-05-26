@@ -10,13 +10,14 @@ import java.util.List;
 /**
  * Created by Christoffer on 24-05-2015.
  */
-public class CountryDBManager implements CountryDBManagerInterface {
-    private static DatabaseConnection databaseConnection;
+public enum CountryDBManager implements CountryDBManagerInterface {
+    INSTANCE;
 
-    public CountryDBManager() {
-        databaseConnection = DatabaseConnection.getInstance();
+    private DatabaseConnection databaseConnection;
+
+    CountryDBManager() {
+        databaseConnection = DatabaseConnection.INSTANCE.getInstance();
     }
-
 
     public List<Country> getCountries() {
         List<Country> countries = new ArrayList<>();
@@ -24,7 +25,6 @@ public class CountryDBManager implements CountryDBManagerInterface {
         try (Connection con = databaseConnection.getConnection()) {
             stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT id, name, alpha2, alpha3 FROM Country");
-            System.out.println("Selecting all from Country");
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
@@ -36,6 +36,7 @@ public class CountryDBManager implements CountryDBManagerInterface {
             rs.close();
             stmt.close();
             con.close();
+            System.out.println("getCountries - Returning " + countries.size() + " countries.");
             return countries;
         } catch (SQLException e) {
             System.out.println(e.getClass().getName() + " " + e.getMessage());
@@ -49,8 +50,6 @@ public class CountryDBManager implements CountryDBManagerInterface {
         try (Connection con = databaseConnection.getConnection()) {
             stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT id, name, alpha2, alpha3 FROM Country WHERE id = " + id);
-
-            System.out.println("Selecting country with id: " + id);
             while (rs.next()) {
                 int cid = rs.getInt("id");
                 String cname = rs.getString("name");
@@ -61,10 +60,9 @@ public class CountryDBManager implements CountryDBManagerInterface {
             rs.close();
             stmt.close();
             con.close();
-            System.out.println("return countries list success " + country.toString());
+            System.out.println("getCountry - Returning data about " + country.getName() + " to the user.");
             return country;
         } catch (Exception e) {
-            System.out.println("Could not return a country with id: " + id);
             System.out.println(e.getClass().getName() + " " + e.getMessage());
         }
         return country;
@@ -105,6 +103,29 @@ public class CountryDBManager implements CountryDBManagerInterface {
             System.out.println("Could not delete the country with id: " + id);
         }
         System.out.println("Deletion complete.");
+    }
+
+    public void editCountry(int id, String name, String alpha2, String alpha3) {
+        Statement stmt = null;
+        try (Connection con = databaseConnection.getConnection()) {
+            stmt = con.createStatement();
+            con.setAutoCommit(false);
+            String sql = "UPDATE Country " +
+                            "SET name = ?, alpha2 = ?, alpha3 = ? " +
+                            "WHERE id = ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+                ps.setString(1, name);
+                ps.setString(2, alpha2);
+                ps.setString(3, alpha3);
+                ps.setInt(4, id);
+            ps.execute();
+            stmt.close();
+            con.commit();
+            con.close();
+        }
+        catch (Exception e) {
+            System.out.println(e.getClass().getName() + " " + e.getMessage());
+        }
     }
 
 
