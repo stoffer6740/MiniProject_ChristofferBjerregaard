@@ -25,11 +25,8 @@ import java.util.concurrent.TimeUnit;
  * Created by prep on 20-02-2015.
  */
 public class RmiServerImpl extends UnicastRemoteObject implements RmiServer {
-//    private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-//    private CurrencyUpdater updater = new CurrencyUpdater();
     private static CurrencyLoader currencyCache = CurrencyLoader.INSTANCE;
     private static HashMap<String, Double> currencyExchange = new HashMap<>();
-    protected static UpdaterObject updaterSettings = new UpdaterObject();
     private static int rmiStatus;
     private static int currencyStatus;
 
@@ -58,21 +55,16 @@ public class RmiServerImpl extends UnicastRemoteObject implements RmiServer {
         System.out.println("PeerServer bound in registry");
 
         // Fetch currencies from yahoo
-        updaterSettings.setLastUpdated(Calendar.getInstance().getTime());
         System.out.println("Fetching initial currencies...");
         fillCurrencyCache();
         System.out.println("All currencies are up to date");
     }
 
     protected static void fillCurrencyCache() {
-//        String splitChar = "\\$";
-//        int arrayIndex = 0;
         List<String> currencies = currencyCache.getCurrencyList();
 
         for (String sourceCurrency : currencies) {
             for (String targetCurrency : currencies) {
-//                String splitSourceCurr = sourceCurrency.split(splitChar)[arrayIndex].trim();
-//                String splitTargetCurr = targetCurrency.split(splitChar)[arrayIndex].trim();
                 String appendedCurrency = sourceCurrency + targetCurrency;
 
                 Double value = fetchSingleCurrency(appendedCurrency);
@@ -97,11 +89,6 @@ public class RmiServerImpl extends UnicastRemoteObject implements RmiServer {
 
         return Double.valueOf(exchangeValue);
     }
-
-//    private void scheduleUpdate(UpdaterObject updaterSettings) {
-//        System.out.println("Updater scheduled to run every " + updaterSettings.getPeriod() + " " + updaterSettings.getTimeUnit().toString().toLowerCase());
-//        scheduler.scheduleAtFixedRate(updater, updaterSettings.getDelay(), updaterSettings.getPeriod(), updaterSettings.getTimeUnit());
-//    }
 
     @Override
     public double exchangeRate(String sourceCurrency, String targetCurrency, Double amount) {
@@ -142,18 +129,4 @@ public class RmiServerImpl extends UnicastRemoteObject implements RmiServer {
         }
         return 0;
     }
-
-//    @Override
-//    public UpdaterObject getUpdaterSettings() {
-//        return updaterSettings;
-//    }
-//
-//    @Override
-//    public void setUpdaterSettings(int delay, int period, TimeUnit timeUnit) {
-//        updaterSettings.setDelay(delay)
-//                .setPeriod(period)
-//                .setTimeUnit(timeUnit);
-//
-//        scheduleUpdate(updaterSettings);
-//    }
 }

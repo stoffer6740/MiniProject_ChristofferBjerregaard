@@ -19,6 +19,7 @@ import java.net.Socket;
 import java.rmi.Naming;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.rmi.server.ServerNotActiveException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -58,12 +59,14 @@ public class CountryController {
 
     //Returns the status of the RMI server
     @RequestMapping(value = "/get/RmiServer", method = RequestMethod.GET)
-    public String getRmiServer() throws RemoteException, MalformedURLException, NotBoundException {
+    public String getRmiServer() throws RemoteException, MalformedURLException, NotBoundException, ServerNotActiveException {
         try (Socket ignored = new Socket(ServerConfig.SERVER_IP, RegistryConfig.REGISTRY_PORT)) {
             try {
                 server = (RmiServer) Naming.lookup(ServerConfig.SERVER_ADDRESS);
+                // Log client on RMI server
+                _rmiConnector.getRmiServer().getClientInfo();
                 return "{\"status\":\"1\"}";
-            } catch (NotBoundException | MalformedURLException | RemoteException e) {
+            } catch (NotBoundException | MalformedURLException | RemoteException | ServerNotActiveException e) {
                 System.out.println(e.getMessage());
             }
         } catch (IOException ex) {

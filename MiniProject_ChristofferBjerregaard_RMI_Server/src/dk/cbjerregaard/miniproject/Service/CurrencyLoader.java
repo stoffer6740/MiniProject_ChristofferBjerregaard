@@ -19,9 +19,8 @@ public enum CurrencyLoader {
 
     CurrencyLoader() {
         Charset defaultCharset = Charset.defaultCharset();
-        // Path to the file containing the different currencies
-//        Path currencyPath = Paths.get("Currency");
 
+        // Path to the file containing the different currencies
         URL url = getClass().getResource("/Currency");
         Path currencyPath = null;
         try {

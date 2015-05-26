@@ -31,118 +31,7 @@
     <favorites_list name="MiniProject_ChristofferBjerregaard" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="CountryDBManager.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/DAL/CountryDBManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1260" max-vertical-offset="3280">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding>
-                <element signature="e#441#442#0" expanded="true" />
-                <element signature="e#519#520#0" expanded="true" />
-                <marker date="1432670866574" expanded="true" signature="804:848" placeholder="SELECT id, n..Country..." />
-                <marker date="1432670866574" expanded="true" signature="1838:1894" placeholder="SELECT id, n..Country..." />
-                <marker date="1432670866574" expanded="true" signature="2868:2924" placeholder="INSERT INTO ..." />
-                <marker date="1432670866574" expanded="true" signature="3689:3720" placeholder="DELETE FROM ..." />
-                <marker date="1432670866574" expanded="true" signature="4400:4530" placeholder="UPDATE Count..." />
-                <marker date="1432670866574" expanded="true" signature="5212:5525" placeholder="CREATE TABLE..Country..." />
-                <marker date="1432670866574" expanded="true" signature="5919:5937" placeholder="DROP TABLE C..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CountryController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/Controllers/CountryController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="419" max-vertical-offset="1680">
-              <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SimpleCORSFilter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/Filters/SimpleCORSFilter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46783626" vertical-offset="0" max-vertical-offset="520">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Country.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/BE/Country.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="80" max-vertical-offset="960">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/Config/ServerConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="300">
-              <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistryConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/Config/RegistryConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="300">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="1200">
-              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="180">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/resources/applicationContext.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="340">
-              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseConnection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/DAL/DatabaseConnection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="440">
-              <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -2059,16 +1948,16 @@
       <workItem from="1432647977218" duration="2684000" />
       <workItem from="1432652022031" duration="13134000" />
       <workItem from="1432674518475" duration="349000" />
-      <workItem from="1432675006962" duration="1010000" />
+      <workItem from="1432675006962" duration="1717000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100071000" />
+    <option name="totallyTimeSpent" value="100778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="960" y="0" width="960" height="1046" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2088,10 +1977,10 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37611607" sideWeight="0.815625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="1.0" sideWeight="0.815625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32932165" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20403588" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20403588" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2181,13 +2070,13 @@
           <folding>
             <element signature="e#441#442#0" expanded="true" />
             <element signature="e#519#520#0" expanded="true" />
-            <marker date="1432670866574" expanded="true" signature="804:848" placeholder="SELECT id, n..Country..." />
-            <marker date="1432670866574" expanded="true" signature="1838:1894" placeholder="SELECT id, n..Country..." />
-            <marker date="1432670866574" expanded="true" signature="2868:2924" placeholder="INSERT INTO ..." />
-            <marker date="1432670866574" expanded="true" signature="3689:3720" placeholder="DELETE FROM ..." />
-            <marker date="1432670866574" expanded="true" signature="4400:4530" placeholder="UPDATE Count..." />
-            <marker date="1432670866574" expanded="true" signature="5212:5525" placeholder="CREATE TABLE..Country..." />
-            <marker date="1432670866574" expanded="true" signature="5919:5937" placeholder="DROP TABLE C..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="SELECT id, n..Country..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="SELECT id, n..Country..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="UPDATE Count..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..Country..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="DROP TABLE C..." />
           </folding>
         </state>
       </provider>
@@ -2269,13 +2158,13 @@
           <folding>
             <element signature="e#441#442#0" expanded="true" />
             <element signature="e#519#520#0" expanded="true" />
-            <marker date="1432670866574" expanded="true" signature="804:848" placeholder="SELECT id, n..Country..." />
-            <marker date="1432670866574" expanded="true" signature="1838:1894" placeholder="SELECT id, n..Country..." />
-            <marker date="1432670866574" expanded="true" signature="2868:2924" placeholder="INSERT INTO ..." />
-            <marker date="1432670866574" expanded="true" signature="3689:3720" placeholder="DELETE FROM ..." />
-            <marker date="1432670866574" expanded="true" signature="4400:4530" placeholder="UPDATE Count..." />
-            <marker date="1432670866574" expanded="true" signature="5212:5525" placeholder="CREATE TABLE..Country..." />
-            <marker date="1432670866574" expanded="true" signature="5919:5937" placeholder="DROP TABLE C..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="SELECT id, n..Country..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="SELECT id, n..Country..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="UPDATE Count..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..Country..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="DROP TABLE C..." />
           </folding>
         </state>
       </provider>
@@ -2493,20 +2382,20 @@
           <folding>
             <element signature="e#441#442#0" expanded="true" />
             <element signature="e#519#520#0" expanded="true" />
-            <marker date="1432670866574" expanded="true" signature="804:848" placeholder="SELECT id, n..Country..." />
-            <marker date="1432670866574" expanded="true" signature="1838:1894" placeholder="SELECT id, n..Country..." />
-            <marker date="1432670866574" expanded="true" signature="2868:2924" placeholder="INSERT INTO ..." />
-            <marker date="1432670866574" expanded="true" signature="3689:3720" placeholder="DELETE FROM ..." />
-            <marker date="1432670866574" expanded="true" signature="4400:4530" placeholder="UPDATE Count..." />
-            <marker date="1432670866574" expanded="true" signature="5212:5525" placeholder="CREATE TABLE..Country..." />
-            <marker date="1432670866574" expanded="true" signature="5919:5937" placeholder="DROP TABLE C..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="SELECT id, n..Country..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="SELECT id, n..Country..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="UPDATE Count..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..Country..." />
+            <marker date="1432670866574" expanded="true" signature="-1:-1" placeholder="DROP TABLE C..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+        <state vertical-scroll-proportion="0.11406844" vertical-offset="0" max-vertical-offset="526">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
@@ -2514,7 +2403,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+        <state vertical-scroll-proportion="0.4288499" vertical-offset="0" max-vertical-offset="513">
           <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
           <folding />
         </state>
@@ -2522,7 +2411,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/DAL/DatabaseConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="440">
+        <state vertical-scroll-proportion="0.5068226" vertical-offset="0" max-vertical-offset="513">
           <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
           <folding />
         </state>
@@ -2530,7 +2419,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/Config/ServerConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+        <state vertical-scroll-proportion="0.2729045" vertical-offset="0" max-vertical-offset="513">
           <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
           <folding />
         </state>
@@ -2538,7 +2427,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/Config/RegistryConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+        <state vertical-scroll-proportion="0.34220532" vertical-offset="0" max-vertical-offset="526">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
@@ -2546,24 +2435,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/BE/Country.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
+        <state vertical-scroll-proportion="0.038022812" vertical-offset="80" max-vertical-offset="960">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/Controllers/CountryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="419" max-vertical-offset="1680">
-          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/Filters/SimpleCORSFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46783626" vertical-offset="0" max-vertical-offset="520">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.662768" vertical-offset="0" max-vertical-offset="520">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dk/cbjerregaard/miniproject/Controllers/CountryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31384015" vertical-offset="659" max-vertical-offset="1720">
+          <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="48" />
           <folding />
         </state>
       </provider>

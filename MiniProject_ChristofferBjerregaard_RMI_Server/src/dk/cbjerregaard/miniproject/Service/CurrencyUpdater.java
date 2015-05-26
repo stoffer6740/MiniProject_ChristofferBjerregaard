@@ -18,7 +18,7 @@ public class CurrencyUpdater implements Runnable {
         RmiServerImpl.fillCurrencyCache();
 
         Calendar calEnd = Calendar.getInstance();
-        RmiServerImpl.updaterSettings.setLastUpdated(calEnd.getTime());
+//        RmiServerImpl.updaterSettings.setLastUpdated(calEnd.getTime());
         System.out.println(String.format("%-19s %s", "Update #" + count + " completed ", dateFormat.format(calEnd.getTime())));
         count++;
     }
