@@ -1,23 +1,30 @@
 <p>Add new country</p>
 <div class="">
     <div class="col-lg-4">
-        <form>
-        <div class="form-group addcountry">
-            <input class="form-control" placeholder="Name (ex. Denmark)" ng-model="country.name">
-            <input class="form-control" placeholder="Alpha 2 (ex. dk)" ng-model="country.alpha2">
-            <input class="form-control" placeholder="Alpha 3 (ex. DNK)" ng-model="country.alpha3">
-        </div>
-        <input class="btn btn-primary pull-right" type="button" value="Submit country" ng-click="addCountry(country)">
+        <form name="addCountryForm" novalidate>
+            <div class="form-group addcountry">
+                <input class="form-control" placeholder="Name (ex. Denmark)" name="country" ng-model="country.name" required>
+                <input class="form-control" ng-minlength="2" ng-maxlength="2" placeholder="Alpha 2 (ex. dk)"  name="alpha2" ng-model="country.alpha2" required>
+                <input class="form-control" ng-minlength="3" ng-maxlength="3" placeholder="Alpha 3 (ex. DNK)" name="alpha3" ng-model="country.alpha3" required>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Submit country" ng-click="addCountry(country)">
+            <input ng-hide="restCountries" type="button" class="btn btn-success pull-right" value="Get list of Sample countries" ng-click="getRestCountries()">
+            <p ng-show="addCountryForm.country.$error.required">Name is required.</p>
+            <p ng-show="addCountryForm.alpha2.$error.required">Alpha 2 is required.</p>
+            <p ng-show="addCountryForm.alpha2.$error.minlength">Alpha 2 is too short.</p>
+            <p ng-show="addCountryForm.alpha2.$error.maxlength">Alpha 2 is too long.</p>
+            <p ng-show="addCountryForm.alpha3.$error.required">Alpha 3 is required.</p>
+            <p ng-show="addCountryForm.alpha3.$error.minlength">Alpha 3 is too short.</p>
+            <p ng-show="addCountryForm.alpha3.$error.maxlength">Alpha 3 is too long.</p>
         </form>
         {{ message }}
     </div>
 
     <div class="col-lg-8">
         <div class="list-group">
-            <div class="list-group-item col-lg-6" ng-repeat="c in restCountries | filter:country.name">
-                {{ c.name }} | {{ c.alpha2Code }} | {{ c.alpha3Code }}
+            <div class="list-group-item col-lg-6" ng-repeat="c in restCountries | filter:{ name:country.name }">
+                {{ c.name }} | {{ c.alpha2Code }} | {{ c.alpha3Code }} <button class="btn btn-primary pull-right" ng-click="addCountryBtn(c.name, c.alpha2Code, c.alpha3Code)">Add</button>
             </div>
         </div>
-        <input ng-hide="restCountries" type="button" class="btn btn-primary pull-right" value="Get list of Sample countries" ng-click="getRestCountries()">
     </div>
 </div>

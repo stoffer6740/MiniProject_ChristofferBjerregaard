@@ -7,8 +7,8 @@
             </div>
             <ul class="list-group">
                 <li class="list-group-item">Name: {{ country.name }}</li>
-                <li class="list-group-item">Alpha2: {{ country.alpha2 }} <long>ISO 3166-1 alpha-3</long></li>
-                <li class="list-group-item">Alpha3: {{ country.alpha3 }} <long>ISO 3166-1 alpha-2</long></li>
+                <li class="list-group-item">Alpha2: {{ country.alpha2 }} <long>ISO 3166-1 alpha-2</long></li>
+                <li class="list-group-item">Alpha3: {{ country.alpha3 }} <long>ISO 3166-1 alpha-3</long></li>
                 <li class="list-group-item" ng-show="countryInformation.capital">Capital: {{ countryInformation.capital }}</li>
                 <li class="list-group-item" ng-show="countryInformation.region">Region: {{ countryInformation.region }}</li>
                 <li class="list-group-item" ng-show="countryInformation.subregion">Subregion: {{ countryInformation.subregion }}</li>
@@ -18,11 +18,14 @@
     </div>
 
     <!-- Country description -->
-    <div class="col-lg-8">
-        <div class="wiki-text">
-            <h2>Information about {{ country.name }}.</h2>
-            <hr>
-            {{ countryDescription.result }}
+    <div ng-show="countryDescription.result" class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Information about <strong>{{ country.name }}</strong>.
+            </div>
+            <div  class="panel-body">
+                {{ countryDescription.result }}
+            </div>
         </div>
     </div>
 
@@ -30,50 +33,46 @@
     <!-- Google maps -->
     <div class="col-lg-12 gmaps">
         <div id="maps" style="height: 250px">
-
         </div>
     </div>
 
-    <!-- Currency -->
-<span ng-hide="status == 0 || !status">
-    <div class="col-lg-8">
-        <div class="currencyComparator">
-            <c3chart bindto-id="chart1">
-                <chart-column column-id="country.name"
-                              column-values="30,200,100,400,150,250"
-                              column-type="bar"></chart-column>
-            </c3chart>
-            <div ng-hide="currencies">{{ currencies }}</div>
-        </div>
-    </div>
-
-    <div class="col-lg-4">
-        <div class="currencyConverter">
-            <label class="sr-only" for="ToCurrency">To</label>
-            <input type="number" class="form-control" id="ToCurrency" ng-model="curr.toCountry" placeholder="">
-            <label class="sr-only" for="FromCurrency">From</label>
-            <input type="number" class="form-control" id="FromCurrency" ng-model="curr.fromCountry" placeholder="{{countryInformation.currencies[0]}}">
-            <hr>
-            <button class="btn btn-primary" ng-click="convert(curr)">Convert {{countryInformation.currencies[0]}} to xxx </button>
-            <div class="currencyResult">
-                <p>Result</p>
-                <hr>
+    <!-- Currency (hidden if RMI server is down) -->
+    <div class="col-lg-12" ng-hide="status == 0 || !status">
+        <div class="col-lg-4 pull-left currencyConverter">
+            <p>Currency converter with amount.</p>
+            <div class="col-lg-6">
+                Source: <strong>{{ countryInformation.currencies[0] }}</strong>
             </div>
+            <div class="col-lg-6">
+                Target: <select class="form-control" ng-model="targetCurrencyAmount" ng-options="o as o for o in JSONCurrencyList">
+                <option value=""></option>
+            </select>
+            </div>
+            <div class="col-lg-12">
+                <input type="number" ng-model="amount" placeholder="Amount" class="col-lg-12 form-control" style="width:100%; margin:5px 0 5px 0">
+            </div>
+            <p>Result: <strong>{{ convertedResultAmount }} {{ targetCurrencyAmount }}</strong></p>
+            <button class="btn btn-primary" ng-click="convertAmount(countryInformation.currencies[0], targetCurrencyAmount, amount)">Convert</button>
+        </div>
+
+        <div class="col-lg-4 form-group pull-right currencyConverter">
+            <p>Currency converter</p>
+            <div class="col-lg-6">
+                Source: <strong>{{ countryInformation.currencies[0] }}</strong>
+            </div>
+            <div class="col-lg-6">
+                Target: <select class="form-control" ng-model="targetCurrency" ng-options="o as o for o in JSONCurrencyList">
+                            <option value=""></option>
+                        </select>
+            </div>
+            <p>Result: <strong>{{ convertedResult }} {{ targetCurrency }}</strong></p>
+            <button class="btn btn-primary" ng-click="convert(countryInformation.currencies[0], targetCurrency)">Convert</button>
         </div>
     </div>
+
+    <!-- Edit -->
     <div class="col-lg-12">
         <button class="btn btn-primary" ng-click="open()">Edit {{ country.name }}</button>
     </div>
 
-    <input type="text" ng-model="test.source">
-    <input type="text" ng-model="test.target">
-    <input type="number" ng-model="test.amount">
-    <button ng-click="convertAmount(test)">Click me</button>
-    <p>{{ resultOfConvert }}</p>
-</span>
-
-    <script>
-
-    </script>
-    <!--<input type="button" class="btn btn-primary" ui-sref="edit({country: country.name, id: country.id})" value="Edit {{ country.name }}">-->
 </div>

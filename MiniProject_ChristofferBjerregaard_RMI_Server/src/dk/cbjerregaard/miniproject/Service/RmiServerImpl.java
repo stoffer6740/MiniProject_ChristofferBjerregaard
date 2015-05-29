@@ -14,12 +14,7 @@ import java.rmi.registry.Registry;
 import java.rmi.server.RemoteServer;
 import java.rmi.server.ServerNotActiveException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.*;
 
 /**
  * Created by prep on 20-02-2015.
@@ -27,8 +22,11 @@ import java.util.concurrent.TimeUnit;
 public class RmiServerImpl extends UnicastRemoteObject implements RmiServer {
     private static CurrencyLoader currencyCache = CurrencyLoader.INSTANCE;
     private static HashMap<String, Double> currencyExchange = new HashMap<>();
-    private static int rmiStatus;
+    private static HashMap<String, HashMap<String, HashMap<String, Double>>> currencySingleRate = new HashMap<>();
     private static int currencyStatus;
+
+//    private static HashMap<HashMap<String, String>, HashMap<String, Double>> currencyMap = new HashMap<>();
+//    private static ArrayList<HashMap<HashMap<String, String>, HashMap<String, Double>>> t = new ArrayList<>();
 
     public RmiServerImpl() throws RemoteException {
         super(0);
@@ -41,7 +39,6 @@ public class RmiServerImpl extends UnicastRemoteObject implements RmiServer {
             Registry registry = LocateRegistry.createRegistry(RegistryConfig.REGISTRY_PORT);
             registry.rebind(RegistryConfig.INSTANCE_NAME, new RmiServerImpl());
             System.out.println("java RMI registry created.");
-            rmiStatus = 1;
         } catch (RemoteException e) {
             //do nothing, error means registry already exists
             System.out.println("java RMI registry already exists.");
@@ -60,23 +57,28 @@ public class RmiServerImpl extends UnicastRemoteObject implements RmiServer {
         System.out.println("All currencies are up to date");
     }
 
+
     protected static void fillCurrencyCache() {
         List<String> currencies = currencyCache.getCurrencyList();
+
 
         for (String sourceCurrency : currencies) {
             for (String targetCurrency : currencies) {
                 String appendedCurrency = sourceCurrency + targetCurrency;
+
 
                 Double value = fetchSingleCurrency(appendedCurrency);
                 currencyExchange.put(appendedCurrency, value);
             }
         }
 
+
         currencyStatus = 1;
     }
 
     private static double fetchSingleCurrency(String currency) {
-        String req = "http://download.finance.yahoo.com/d/quotes.csv?s=" +currency.toUpperCase() +"=X&f=l1";        String exchangeValue = "";
+        String req = "http://download.finance.yahoo.com/d/quotes.csv?s=" + currency.toUpperCase() + "=X&f=l1";
+        String exchangeValue = "";
 
         try {
             URL url = new URL(req);
@@ -110,23 +112,38 @@ public class RmiServerImpl extends UnicastRemoteObject implements RmiServer {
 
     @Override
     public void getClientInfo() throws ServerNotActiveException {
-        // log it instead if a logger was implemented
         System.err.println("Connected client: " + RemoteServer.getClientHost());
     }
 
     @Override
-    public int getClientStatus() throws RemoteException {
-        if(rmiStatus == 1) {
-            return rmiStatus;
+    public HashMap showAppendedCurrencyList() throws RemoteException {
+        if (currencyStatus == 1){
+
+            System.out.println("List is up to date, returning list.");
+//            return t;
+            return currencyExchange;
         }
-        return 0;
+        else {
+            System.out.println("Still updating currency list.");
+            return null;
+        }
     }
 
     @Override
-    public int getCurrencyStatus() throws RemoteException {
-        if(currencyStatus == 1) {
-            return currencyStatus;
+    public HashMap showCurrencyList() throws RemoteException {
+        if (currencyStatus == 1){
+
+            System.out.println("List of single rates is up to date, returning list.");
+            return currencySingleRate;
         }
-        return 0;
+        else {
+            System.out.println("Still updating currency list.");
+            return null;
+        }
+    }
+
+    @Override
+    public List showAvailableCountries() throws RemoteException {
+        return currencyCache.getCurrencyList();
     }
 }

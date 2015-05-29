@@ -3,6 +3,9 @@ package dk.cbjerregaard.miniproject.Service;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.server.ServerNotActiveException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -15,9 +18,9 @@ public interface RmiServer extends Remote {
 
     void getClientInfo() throws ServerNotActiveException, RemoteException;
 
-    int getClientStatus() throws RemoteException;
+    HashMap showAppendedCurrencyList() throws RemoteException;
 
-    int getCurrencyStatus() throws RemoteException;
+    HashMap showCurrencyList() throws RemoteException;
 
-//    void setUpdaterSettings(int delay, int period, TimeUnit timeUnit) throws RemoteException;
+    public List showAvailableCountries() throws RemoteException;
 }

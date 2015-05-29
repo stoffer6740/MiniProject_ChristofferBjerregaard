@@ -1,5 +1,6 @@
 package dk.cbjerregaard.miniproject.DAL;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import dk.cbjerregaard.miniproject.BE.Country;
 import dk.cbjerregaard.miniproject.Interfaces.CountryDBManagerInterface;
 
@@ -75,9 +76,9 @@ public enum CountryDBManager implements CountryDBManagerInterface {
             con.setAutoCommit(false);
             String sql = "INSERT INTO Country (name, alpha2, alpha3) VALUES(?,?,?)";
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, name);
-            ps.setString(2, alpha2);
-            ps.setString(3, alpha3);
+                ps.setString(1, name);
+                ps.setString(2, alpha2);
+                ps.setString(3, alpha3);
             ps.execute();
             stmt.close();
             con.commit();

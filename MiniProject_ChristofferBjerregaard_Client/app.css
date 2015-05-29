@@ -158,3 +158,18 @@ long {
     -o-animation: spinner 2s linear infinite;
     animation: spinner 2s linear infinite;
 }
+.form-input input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+}
+
+.form-input input.ng-valid.ng-touched {
+    background-color: #78FA89;
+}
+
+input.ng-invalid {
+    border-color: #FA787E;
+}
+.currencies {
+    font-size: 10px;
+    color: #dcdcdc;
+}

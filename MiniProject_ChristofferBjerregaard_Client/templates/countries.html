@@ -1,5 +1,6 @@
 <p ng-show="!countries.length == 0">There are <strong>{{ countries.length }}</strong> countries in the database.</p>
 <p ng-show="countries.length == 0">There are <strong>NO</strong> countries in the database. <a ui-sref="countries/addcountry">Add some?</a></p>
+
 <div class="col-lg-4" ng-repeat="country in countries">
     <div class="panel panel-default">
         <div class="panel-heading w_flag">

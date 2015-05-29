@@ -16,6 +16,12 @@ public class Country {
         this.alpha3         = alpha3;
     }
 
+    public Country(String name, String alpha2, String alpha3) {
+        this.name           = name;
+        this.alpha2         = alpha2;
+        this.alpha3         = alpha3;
+    }
+
     public Country(int id) {
         this.id = id;
     }

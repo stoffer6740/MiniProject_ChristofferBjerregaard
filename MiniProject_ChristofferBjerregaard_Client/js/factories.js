@@ -20,8 +20,7 @@ mini_project.factory('CountriesFactory', function ($http) {
         getCountries: function () {
             return $http({
                     url: BASE_URL + '/get/countries',
-                    method: 'GET',
-                    headers:  {'Content-Type' : 'application/json;charset=UTF-8'}
+                    method: 'GET'
                 })
                 .success(function () {
                     console.log('getCountries success.');
@@ -70,18 +69,6 @@ mini_project.factory('CountriesFactory', function ($http) {
                     console.log('editCountry error.');
                 })
         },
-        quickAdd: function () {
-            return $http({
-                    url: BASE_URL + '/quickadd',
-                    method: 'POST'
-                })
-                .success(function () {
-                    console.log('quickAdd success.');
-                })
-                .error(function () {
-                    console.log('quickAdd error.');
-                })
-        },
         getFromWiki: function (name) {
             return $http({
                     url: WIKI_URL + angular.lowercase(name),
@@ -105,22 +92,6 @@ mini_project.factory('CountriesFactory', function ($http) {
                     console.log('getFromRestCountries success.');
                 })
                 .error(function () {
-                    console.log('getFromRestCountries error.');
-                })
-        },
-        getCurrencies: function(fromCountry, toCountry) {
-            return $http({
-                    url: CURRENCY_API_URL,
-                    method: 'JSONP',
-                    cache:true,
-                    params: {from:fromCountry, to:toCountry, apiKey:CURRENCY_API_KEY, callback:'JSON_CALLBACK'}
-                })
-                .success(function (data) {
-                    console.log(data);
-                    console.log('getFromRestCountries success.');
-                })
-                .error(function (data) {
-                    console.log(data);
                     console.log('getFromRestCountries error.');
                 })
         },
@@ -148,6 +119,18 @@ mini_project.factory('CountriesFactory', function ($http) {
                 })
                 .error(function (data) {
                     console.log('getFromRestCountries error.');
+                })
+        },
+        getJSONCurrencyList: function () {
+            return $http({
+                url: BASE_URL + '/get/JSONCurrencyList',
+                method: 'GET'
+            })
+                .success(function () {
+                    console.log('getJSONCurrencyList success.');
+                })
+                .error(function () {
+                    console.log('getJSONCurrencyList error.');
                 })
         },
         getDataFromRestCountries: function(alpha2) {

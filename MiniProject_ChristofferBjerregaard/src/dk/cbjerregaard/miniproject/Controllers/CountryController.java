@@ -21,6 +21,8 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.server.ServerNotActiveException;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -28,6 +30,7 @@ import java.util.List;
  */
 @RestController
 public class CountryController {
+
     RmiServer server;
     private static CountryDBManager _cdbManager = CountryDBManager.INSTANCE;
     private static RmiConnector _rmiConnector = RmiConnector.INSTANCE;
@@ -55,6 +58,26 @@ public class CountryController {
         else {
             return _rmiConnector.getRmiServer().exchangeRate(sourceCurrency, targetCurrency, amount);
         }
+    }
+
+
+    @RequestMapping(value = "/get/JSONSingleCurrencyList", method = RequestMethod.GET)
+    public HashMap getJSONSingleCurrencyList() throws RemoteException {
+        System.out.println("Returning currency list with exchangerates.");
+        return _rmiConnector.getRmiServer().showCurrencyList();
+    }
+
+    @RequestMapping(value = "/get/JSONAppendedCurrencyList", method = RequestMethod.GET)
+    public HashMap getJSONAppendedCurrencyList() throws RemoteException {
+        System.out.println("Returning appended currency list, with exchangerates.");
+
+        return _rmiConnector.getRmiServer().showAppendedCurrencyList();
+    }
+
+    @RequestMapping(value = "/get/JSONCurrencyList", method = RequestMethod.GET)
+    public List getJSONCurrencyList() throws RemoteException {
+        System.out.println("Returning list of currencies.");
+        return _rmiConnector.getRmiServer().showAvailableCountries();
     }
 
     //Returns the status of the RMI server
